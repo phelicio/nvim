@@ -1,0 +1,11 @@
+{
+  "languageserver": {
+    "rust-analyzer": {
+      "command": "rust-analyzer",
+      "filetypes": ["rust"],
+      "rootPatterns": ["Cargo.toml", "rust-project.json"],
+      "trace.server": "verbose"
+    }
+  }
+}
+
