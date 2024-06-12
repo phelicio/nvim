@@ -1,11 +1,25 @@
 {
-  "languageserver": {
-    "rust-analyzer": {
-      "command": "rust-analyzer",
-      "filetypes": ["rust"],
-      "rootPatterns": ["Cargo.toml", "rust-project.json"],
-      "trace.server": "verbose"
-    }
-  }
+	"languageserver": {
+		"rust-analyzer": {
+			"command": "rust-analyzer",
+			"filetypes": ["rust"],
+			"rootPatterns": ["Cargo.toml", "rust-project.json"],
+			"trace.server": "verbose"
+		},
+		"php.validate.executablePath": "/usr/bin/php",
+		"php.suggest.autoImports": true,
+		"php.suggest.classTemplates": true,
+		"php.suggest.basic": false,
+		"intelephense.format.enable": true,
+		"intelephense.files.maxSize": 5000000,
+		"intelephense.environment.phpVersion": "7.4.0",
+		"intelephense.trace.server": "verbose",
+		"intelephense.files.associations": [
+			"**/*.php",
+			"**/*.phtml"
+		]
+
+
+	}
 }
 

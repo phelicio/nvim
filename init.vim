@@ -19,13 +19,18 @@ Plug 'akinsho/nvim-bufferline.lua'
 Plug 'vim-scripts/bufferlist.vim'
 Plug 'mg979/vim-visual-multi'
 Plug 'raimondi/delimitMate'
+Plug 'phpactor/phpactor', {'for': 'php'}
+Plug 'neoclide/coc-phpls'
 
 call plug#end()
+
+autocmd FileType php setlocal omnifunc=phpactor#Complete
 
 let g:coc_global_extensions = ['coc-rust-analyzer', 'coc-json', 'coc-snippets']
 
 let g:ale_linters = {
 \   'rust': ['cargo', 'rust-clippy'],
+\   'php': ['php', 'phpcs', 'phpmd'],
 \}
 let g:ale_fixers = {
 \   'rust': ['rustfmt'],
@@ -36,6 +41,7 @@ let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --glob "!.git/" --glob "!vendor/
 let g:fzf_command_prefix = 'Fzf'
 let g:ale_rust_cargo_use_clippy = 1
 let g:VM_default_mappings = 1
+let g:coc_global_extensions = ['coc-phpls']
 
 if exists('g:neovide')
     let g:neovide_font_size = 18
