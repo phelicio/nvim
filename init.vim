@@ -18,9 +18,9 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'akinsho/nvim-bufferline.lua'
 Plug 'vim-scripts/bufferlist.vim'
 Plug 'mg979/vim-visual-multi'
+Plug 'raimondi/delimitMate'
 Plug 'phpactor/phpactor', {'for': 'php'}
 Plug 'neoclide/coc-phpls'
-
 
 call plug#end()
 
@@ -59,6 +59,8 @@ set relativenumber
 set number
 set fillchars=eob:\ 
 
+command! FzfFilesAll call fzf#run({'source': 'rg --files --hidden', 'sink': 'e', 'down': '40%'})
+
 imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
 
 inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
@@ -84,8 +86,6 @@ nnoremap <silent> <space>0 :BufferLineGoToBuffer 10<CR>
 
 cnoremap <silent><expr> <C-n> pumvisible() ? "\<C-n>" : "\<C-n>"
 cnoremap <silent><expr> <C-p> pumvisible() ? "\<C-p>" : "\<C-p>"
-
-command! FzfFilesAll call fzf#run({'source': 'rg --files --hidden', 'sink': 'e', 'down': '40%'})
 
 lua require('plugins.nvim-tree')
 lua require('plugins.lualine')
