@@ -21,6 +21,8 @@ Plug 'mg979/vim-visual-multi'
 Plug 'raimondi/delimitMate'
 Plug 'phpactor/phpactor', {'for': 'php'}
 Plug 'neoclide/coc-phpls'
+Plug 'hashivim/vim-terraform'
+Plug 'stephpy/vim-yaml'
 
 call plug#end()
 
