@@ -3,7 +3,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'junegunn/vim-plug'
 Plug 'Yazeed1s/minimal.nvim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rust-lang/rust.vim'
 Plug 'dense-analysis/ale'
 Plug 'tpope/vim-fugitive'
@@ -19,16 +18,14 @@ Plug 'akinsho/nvim-bufferline.lua'
 Plug 'vim-scripts/bufferlist.vim'
 Plug 'mg979/vim-visual-multi'
 Plug 'raimondi/delimitMate'
-Plug 'phpactor/phpactor', {'for': 'php'}
-Plug 'neoclide/coc-phpls'
 Plug 'hashivim/vim-terraform'
 Plug 'stephpy/vim-yaml'
+Plug 'justinmk/vim-sneak'
 
 call plug#end()
 
 autocmd FileType php setlocal omnifunc=phpactor#Complete
 
-let g:coc_global_extensions = ['coc-rust-analyzer', 'coc-json', 'coc-snippets']
 
 let g:ale_linters = {
 \   'rust': ['cargo', 'rust-clippy'],
@@ -43,7 +40,6 @@ let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --glob "!.git/" --glob "!vendor/
 let g:fzf_command_prefix = 'Fzf'
 let g:ale_rust_cargo_use_clippy = 1
 let g:VM_default_mappings = 1
-let g:coc_global_extensions = ['coc-phpls']
 
 if exists('g:neovide')
     let g:neovide_font_size = 18
@@ -67,7 +63,6 @@ imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
 
 inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <silent><expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm() : "\<CR>"
 inoremap <silent><expr> <C-n> pumvisible() ? "\<C-n>" : "\<C-n>"
 inoremap <silent><expr> <C-p> pumvisible() ? "\<C-p>" : "\<C-p>"
 
